@@ -1,0 +1,29 @@
+---
+import Lightlogo from "../../public/logos/light-logo.png";
+// Light Switch
+import switchLightButton from "../../public/images/dark-light/switch-light-button.png";
+import roundLightButton from "../../public/images/dark-light/round-light-button.png";
+// Dark Switch
+import switchDarkButton from "../../public/images/dark-light/switch-dark-button.png";
+import roundDarkButton from "../../public/images/dark-light/round-dark-button.png";
+---
+
+<header class="flex justify-between">
+  <img
+    class="w-[180px] sm:w-[30vw] md:w-[220px]"
+    src={Lightlogo}
+    alt="Logo claro"
+  />
+
+  <!-- Switch Dark Button -->
+  <label id="switch-label" class="relative" for="switch">
+    <img id="switch-button" src={switchLightButton} alt="switch-button" />
+    <img
+      id="round-button"
+      class="absolute -top-1"
+      src={roundLightButton}
+      alt="round button"
+    />
+  </label>
+  <input class="" type="checkbox" id="switch" />
+</header>
