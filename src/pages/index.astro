@@ -1,8 +1,21 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
+import Hero from "../components/hero/hero-form.astro";
 ---
 
 <Layout title="Newsletter - Dr.Simons">
   <Header />
+  <Hero />
 </Layout>
+
+<style>
+  body {
+    background-color: #222;
+    color: #fff;
+  }
+  .is-active {
+    background-color: #fff;
+    color: #222;
+  }
+</style>
