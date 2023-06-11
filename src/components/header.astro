@@ -1,11 +1,8 @@
 ---
-import DarkLogo from "/logos/dark-logo.jpg";
+import DarkLogo from "/assets/logos/dark-logo.jpg";
 // Light Switch
-import switchLightButton from "/images/switch-mode/switch-dark-button.png";
-import roundLightButton from "/images/switch-mode/round-dark-button.png";
-// Dark Switch
-import switchDarkButton from "/images/switch-mode/switch-light-button.png";
-import roundDarkButton from "/images/switch-mode/round-light-button.png";
+import switchLightButton from "/assets/switch-mode/switch-dark-button.png";
+import roundLightButton from "/assets/switch-mode/round-dark-button.png";
 ---
 
 <header class="flex justify-around items-center">
@@ -28,23 +25,3 @@ import roundDarkButton from "/images/switch-mode/round-light-button.png";
     </label>
   </div>
 </header>
-
-<script>
-  const d = document;
-
-  const switchButton = d.getElementById("switch-button") as HTMLInputElement;
-  const roundButton = d.getElementById("round-button") as HTMLInputElement;
-  const switchInput = d.getElementById("switch-input") as HTMLInputElement;
-
-  d.getElementById("switch-label").addEventListener("click", () => {
-    roundButton.classList.toggle("translate-x-full");
-    if (roundButton.classList.contains("translate-x-full")) {
-      roundButton.src = "/images/switch-mode/round-light-button.png";
-      switchButton.src = "/images/switch-mode/switch-light-button.png";
-      // TODO: Cambiar clase del body a is-active
-    } else {
-      roundButton.src = "/images/switch-mode/round-dark-button.png";
-      switchButton.src = "/images/switch-mode/switch-dark-button.png";
-    }
-  });
-</script>
