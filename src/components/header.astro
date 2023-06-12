@@ -5,17 +5,16 @@ import switchLightButton from "/assets/switch-mode/switch-light-button.png";
 import roundLightButton from "/assets/switch-mode/round-light-button.png";
 ---
 
-<header class="flex justify-around items-center">
+<header class="flex justify-around items-center my-4">
   <img
+    class="w-logo-header-clamp"
     id="header-logo"
-    class="w-[180px] sm:w-[30vw] md:w-[220px]"
     src={LightLogo}
     alt="Logotipo"
   />
 
   <!-- Switch Dark Button -->
   <div class="max-sm:fixed max-sm:bottom-[20px] max-sm:right-[20px]">
-    <!-- TODO: Solucionar bug del boton -->
     <label id="switch-label" class="h-fit relative" for="switch">
       <img
         class="drop-shadow-custom"
@@ -25,9 +24,9 @@ import roundLightButton from "/assets/switch-mode/round-light-button.png";
       />
       <img
         id="round-button"
-        class="absolute -top-[6px] transform transition-transform duration-300 ease-out"
+        class="absolute -top-[6px] transform transition-transform duration-500 ease-out"
         src={roundLightButton}
-        alt="round button"
+        alt="round-button"
       />
     </label>
   </div>

@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
 import Hero from "../layouts/Hero.astro";
+import Opinions from "../layouts/Opinions.astro";
 
 // Images
 import HeroImage from "/assets/hero-light-img.png";
@@ -9,8 +10,11 @@ import HeroImage from "/assets/hero-light-img.png";
 
 <Layout title="Newsletter - Dr.Simons">
   <Header />
-  <main>
-    <section class="mx-[18px] flex gap-20 lg:my-16 items-center sm:mx-[32px]">
+  <>
+    <!-- Sección #1 -->
+    <section
+      class="max-w-[1420px] mx-[18px] mb-16 flex justify-around lg:my-16 items-center sm:mx-auto"
+    >
       <Hero />
       <img
         id="hero-img"
@@ -19,6 +23,10 @@ import HeroImage from "/assets/hero-light-img.png";
         alt="Imagen principal de la Newsletter"
       />
     </section>
-  </main>
+    <!-- Sección #2 -->
+    <Opinions />
+    <!-- Sección #3 -->
+    <!-- Sección #4 -->
+  </>
   <script type="module" src="/scripts/darkmode.js"></script>
 </Layout>
