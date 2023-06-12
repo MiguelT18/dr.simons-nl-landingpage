@@ -15,18 +15,18 @@ const { title } = Astro.props;
     <link rel="icon" type="image" href="/logos/light-logo.png" />
     <title>{title}</title>
   </head>
-  <body>
+  <body data-darkmode>
     <slot />
   </body>
 </html>
 
 <style>
   body {
-    background-color: #222;
-    color: #fff;
-  }
-  .is-active {
     background-color: #fff;
     color: #222;
+  }
+  [data-darkmode].is-active {
+    background-color: #222;
+    color: #fff;
   }
 </style>

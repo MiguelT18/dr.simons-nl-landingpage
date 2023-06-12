@@ -1,11 +1,24 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
-import Hero from "../components/hero/hero-form.astro";
+import Hero from "../layouts/Hero.astro";
+
+// Images
+import HeroImage from "/assets/hero-light-img.png";
 ---
 
 <Layout title="Newsletter - Dr.Simons">
   <Header />
-  <Hero />
+  <main>
+    <section class="mx-[18px] flex gap-20 lg:my-16 items-center sm:mx-[32px]">
+      <Hero />
+      <img
+        id="hero-img"
+        class="h-fit w-hero-clamp max-lg:hidden"
+        src={HeroImage}
+        alt="Imagen principal de la Newsletter"
+      />
+    </section>
+  </main>
   <script type="module" src="/scripts/darkmode.js"></script>
 </Layout>
