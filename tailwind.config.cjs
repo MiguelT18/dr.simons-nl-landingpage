@@ -27,7 +27,7 @@ module.exports = {
         // Light Mode
         "blue-light": "#479EF9",
         // Dark Mode
-        "blue-dark": "#003369",
+        "blue-dark": "#0779F1",
       },
       backgroundImage: (theme) => ({
         "gradient-radial": `radial-gradient(${theme(
