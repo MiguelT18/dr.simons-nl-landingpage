@@ -3,33 +3,35 @@ import Layout from "../layouts/Layout.astro";
 import Header from "../components/header.astro";
 import Hero from "../layouts/Hero.astro";
 import Opinions from "../layouts/Opinions.astro";
+import Footer from "../layouts/Footer.astro";
 
 // Images
 import HeroImage from "/assets/hero-light-img.png";
+import Unete from "../layouts/Unete.astro";
 ---
 
 <Layout title="Newsletter - Dr.Simons">
   <Header />
-  <>
-    <!--? Sección #1 -->
-    <section
-      class="max-w-[1420px] mx-[18px] mb-16 flex justify-around lg:my-16 items-center sm:mx-auto"
-    >
-      <Hero />
-      <img
-        id="hero-img"
-        class="h-fit w-hero-clamp max-lg:hidden"
-        src={HeroImage}
-        alt="Imagen principal de la Newsletter"
-      />
-    </section>
+  <!--? Sección #1 -->
+  <section
+    class="max-w-[1420px] mx-[18px] mb-16 flex justify-around lg:my-16 items-center sm:mx-auto"
+  >
+    <Hero />
+    <img
+      id="hero-img"
+      class="h-fit w-hero-clamp max-lg:hidden"
+      src={HeroImage}
+      alt="Imagen principal de la Newsletter"
+    />
+  </section>
 
-    <!--? Sección #2 -->
-    <Opinions />
+  <!--? Sección #2 -->
+  <Opinions />
 
-    <!--? Sección #3 -->
+  <!--? Sección #3 -->
+  <Unete />
 
-    <!--? Sección #4 -->
-  </>
+  <!--? Footer -->
+  <Footer />
   <script type="module" src="/scripts/darkmode.js"></script>
 </Layout>

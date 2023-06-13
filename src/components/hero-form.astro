@@ -1,3 +1,7 @@
+---
+import Button from "./button.astro";
+---
+
 <form class="flex flex-col gap-3 mt-4">
   <input
     class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
@@ -11,8 +15,5 @@
     name="email"
     placeholder="Correo Electrónico"
   />
-  <button
-    class="bg-main-button py-2 rounded text-white italic hover:bg-red-600 active:scale-95"
-    >Suscríbete</button
-  >
+  <Button />
 </form>

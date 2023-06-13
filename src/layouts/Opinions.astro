@@ -3,7 +3,7 @@ import OpinionCard from "../components/OpinionCard.astro";
 ---
 
 <section
-  class="w-full pb-20 bg-gradient-linear-light dark:bg-gradient-linear-dark"
+  class="w-full bg-gradient-linear-light dark:bg-gradient-linear-dark"
   data-darkmode
 >
   <h1
@@ -12,12 +12,13 @@ import OpinionCard from "../components/OpinionCard.astro";
     Opiniones de mis Suscriptores
   </h1>
 
+  <!-- Cards Container -->
   <div
-    class="w-full flex justify-center gap-[50px] overflow-hidden overflow-x-scroll"
+    class="w-full h-full flex flex-nowrap items-center gap-[50px] overflow-y-hidden overflow-scroll scroll-snap-x-mandatory px-[50px] mx-auto"
   >
     <OpinionCard
       opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-      userName="María Gallardo"
+      userName="Elver Galarga"
       userAccount="@maria_ga02"
     />
     <OpinionCard
@@ -27,13 +28,46 @@ import OpinionCard from "../components/OpinionCard.astro";
     />
     <OpinionCard
       opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-      userName="María Gallardo"
+      userName="Pepe Torrico"
       userAccount="@maria_ga02"
     />
     <OpinionCard
       opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-      userName="María Gallardo"
+      userName="Diego Reyes"
       userAccount="@maria_ga02"
     />
+    <OpinionCard
+      opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
+      userName="Eduardo Chamon"
+      userAccount="@maria_ga02"
+    />
+    <OpinionCard
+      opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
+      userName="Gabolas Verga"
+      userAccount="@maria_ga02"
+    />
+
+    <!-- Card Buttons -->
+  </div>
+  <div class="flex justify-center gap-8 py-6">
+    <div
+      class="grid place-content-center p-1 border-2 border-white rounded-full bg-white bg-opacity-10 cursor-pointer active:scale-90 transition-all duration-100 ease-linear"
+    >
+      <ion-icon class="text-white text-4xl" name="chevron-back-outline"
+      ></ion-icon>
+    </div>
+    <div
+      class="grid place-content-center p-1 border-2 border-white rounded-full bg-white bg-opacity-10 cursor-pointer active:scale-90 transition-all duration-100 ease-linear"
+    >
+      <ion-icon class="text-white text-4xl" name="chevron-forward-outline"
+      ></ion-icon>
+    </div>
   </div>
 </section>
+
+<script
+  type="module"
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script
+  nomodule
+  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>

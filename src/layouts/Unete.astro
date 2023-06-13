@@ -1,0 +1,19 @@
+---
+import UneteArt from "../components/unete-comp.astro";
+
+import MailImage from "/assets/mail-image.png";
+---
+
+<section class="max-w-[90%] mx-auto pb-10">
+  <h1
+    class="font-sans-serif font-bold text-blue-light dark:text-white text-clamp-lg text-center uppercase mt-10 my-8"
+  >
+    Únete Gratis antes de que enviemos el email de hoy
+  </h1>
+  <div
+    class="grid grid-cols-2 justify-items-center items-center max-lg:grid-cols-1"
+  >
+    <img class="w-[80%] max-w-[400px]" src={MailImage} alt="Mail Image" />
+    <UneteArt />
+  </div>
+</section>
