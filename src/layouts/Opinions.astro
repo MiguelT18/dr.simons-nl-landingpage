@@ -12,7 +12,7 @@ import OpinionCard from "../components/OpinionCard.astro";
     Opiniones de mis Suscriptores
   </h1>
 
-  <!-- Cards Container -->
+  <!-- Cards -->
   <div
     class="w-full h-full flex flex-nowrap items-center gap-[50px] overflow-y-hidden overflow-scroll scroll-snap-x-mandatory px-[50px] mx-auto"
   >
@@ -49,7 +49,9 @@ import OpinionCard from "../components/OpinionCard.astro";
 
     <!-- Card Buttons -->
   </div>
-  <div class="flex justify-center gap-8 py-6">
+
+  <!-- Next/Prev Buttons -->
+  <div class="flex justify-center gap-8 py-8">
     <div
       class="grid place-content-center p-1 border-2 border-white rounded-full bg-white bg-opacity-10 cursor-pointer active:scale-90 transition-all duration-100 ease-linear"
     >
@@ -65,6 +67,7 @@ import OpinionCard from "../components/OpinionCard.astro";
   </div>
 </section>
 
+<script type="module" src="/scripts/randomuser.js"></script>
 <script
   type="module"
   src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
