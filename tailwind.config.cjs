@@ -24,18 +24,15 @@ module.exports = {
         "just-black": "#000",
         "just-white": "#fff",
         "main-button": "#F13030",
-        // Light Mode
+        // Blue Light
         "blue-light": "#479EF9",
-        // Dark Mode
-        "blue-dark": "#0779F1",
+        "blue-dark": "#003369",
       },
       backgroundImage: (theme) => ({
-        "gradient-radial": `radial-gradient(${theme(
-          "colors.blue.500"
-        )} 0%, ${theme("colors.blue.700")} 100%)`,
-        "gradient-linear": `linear-gradient(0deg, ${theme(
-          "colors.blue.500"
-        )} 0%, ${theme("colors.blue.700")} 100%)`,
+        "gradient-linear-light":
+          "linear-gradient(180deg, #479EF9 0%, #0779F1 100%)",
+        "gradient-linear-dark":
+          "linear-gradient(180deg, #003369 0%, #004B99 100%)",
       }),
     },
   },
