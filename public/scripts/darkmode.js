@@ -7,9 +7,26 @@ w.addEventListener("DOMContentLoaded", () => {
   const $headerLogo = d.getElementById("header-logo");
   const $heroImg = d.getElementById("hero-img");
 
+  // Recupera el modo oscuro guardado del localStorage
+  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+
+  // Aplica el modo oscuro si estaba guardado en localStorage
+  if (savedDarkMode) {
+    toggleDarkMode(true);
+    $roundButton.classList.add("translate-x-full");
+  }
+
   d.getElementById("switch-label").addEventListener("click", () => {
+    // Comprueba si el modo oscuro está activado
     const isDarkMode = $roundButton.classList.toggle("translate-x-full");
 
+    // Guarda el estado del modo oscuro en localStorage
+    localStorage.setItem("darkMode", isDarkMode);
+
+    toggleDarkMode(isDarkMode);
+  });
+
+  function toggleDarkMode(isDarkMode) {
     const mode = isDarkMode ? "dark" : "light";
     const logo = `/assets/logos/${mode}-logo.png`;
     const roundButtonImage = `/assets/switch-mode/round-${mode}-button.png`;
@@ -34,5 +51,5 @@ w.addEventListener("DOMContentLoaded", () => {
     } else {
       d.documentElement.classList.remove("dark");
     }
-  });
+  }
 });
