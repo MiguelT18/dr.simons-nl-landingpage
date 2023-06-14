@@ -1,10 +1,25 @@
 <div
+  id="opinion-card"
   class="flex flex-col gap-3 min-w-[500px] border-2 border-white rounded-[40px] bg-white bg-opacity-10 text-center py-8 px-5 text-white mt-10 text-clamp-sm font-sans-serif"
 >
-  <!-- <img src={user} alt="User Image" /> -->
+  <img id="user-image" alt="User Image" />
   <p>{Astro.props.opinionText}</p>
-  <h3 class="text-[#E1AB20] font-bold text-clamp-sm uppercase">
-    {Astro.props.userName}
+  <h3 id="user-name" class="text-[#E1AB20] font-bold text-clamp-sm uppercase">
   </h3>
-  <span class="text-sm text-gray-300">{Astro.props.userAccount}</span>
+  <span id="user-account" class="text-sm text-gray-300"></span>
 </div>
+
+<script>
+  fetch("https://randomuser.me/api/")
+    .then((res) => res.json())
+    .then((data) => {
+      const user = data["results"][0];
+      (document.getElementById("user-image") as HTMLImageElement).src =
+        user.picture.medium;
+      (
+        document.getElementById("user-name") as HTMLElement
+      ).textContent = `${user.name.first} ${user.name.last}`;
+      (document.getElementById("user-account") as HTMLElement).textContent =
+        user.login.username;
+    });
+</script>
