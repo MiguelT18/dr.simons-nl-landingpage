@@ -1,78 +1,111 @@
 ---
 import OpinionCard from "../components/OpinionCard.astro";
+import { initSwiper } from "../../public/scripts/swiperApi.js";
 ---
 
 <section
-  class="w-full bg-gradient-linear-light dark:bg-gradient-linear-dark"
+  class="w-full bg-gradient-linear-light dark:bg-gradient-linear-dark pb-16"
   data-darkmode
 >
   <h1
-    class="pt-10 text-just-white text-center text-clamp-lg font-bold font-montserrat uppercase"
+    class="pt-10 pb-8 text-just-white text-center text-clamp-lg font-bold font-montserrat uppercase"
   >
     Opiniones de mis Suscriptores
   </h1>
 
-  <!-- Cards -->
+  <!-- Slider main container -->
   <div
-    class="w-full h-full flex flex-nowrap items-center gap-12 max-sm:gap-6 max-lg:gap-8 overflow-y-hidden overflow-scroll scroll-snap-x-mandatory px-[50px] mx-auto"
+    class="swiper w-[90%] max-w-[600px] min-w-[300px] h-fit overflow-y-hidden overflow-scroll scroll-snap-x-mandatory flex flex-nowrap items-center max-sm:gap-6 max-lg:gap-8 px-[50px]"
   >
-    <OpinionCard
-      gender="women"
-      id="22"
-      userName="Ana Paola"
-      userAccount="@ana_pao02"
-      opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-    />
-    <OpinionCard
-      gender="women"
-      id="35"
-      userName="Ángela Flores"
-      userAccount="@angiflorrr"
-      opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-    />
-    <OpinionCard
-      gender="men"
-      id="6"
-      userName="Andŕes Montaño"
-      userAccount="@montaño_andress"
-      opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-    />
-    <OpinionCard
-      gender="men"
-      id="45"
-      userName="Rodrigo Condori"
-      userAccount="@rodriCondori69"
-      opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-    />
-    <OpinionCard
-      gender="women"
-      id="10"
-      userName="Ana Claudia"
-      userAccount="@anaClauu24"
-      opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
-    />
+    <!-- Additional required wrapper -->
+    <div class="swiper-wrapper">
+      <!-- Slides -->
+      <div class="swiper-slide w-auto h-fit">
+        <OpinionCard
+          gender="women"
+          id="22"
+          userName="Ana Paola"
+          userAccount="@ana_pao02"
+          opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
+        />
+      </div>
+
+      <div class="swiper-slide w-auto h-fit">
+        <OpinionCard
+          gender="women"
+          id="35"
+          userName="Ángela Flores"
+          userAccount="@angiflorrr"
+          opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
+        />
+      </div>
+
+      <div class="swiper-slide w-auto h-fit">
+        <OpinionCard
+          gender="men"
+          id="6"
+          userName="Andŕes Montaño"
+          userAccount="@montaño_andress"
+          opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
+        />
+      </div>
+
+      <div class="swiper-slide w-auto h-fit">
+        <OpinionCard
+          gender="men"
+          id="45"
+          userName="Rodrigo Condori"
+          userAccount="@rodriCondori69"
+          opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
+        />
+      </div>
+
+      <div class="swiper-slide w-auto h-fit">
+        <OpinionCard
+          gender="women"
+          id="10"
+          userName="Ana Claudia"
+          userAccount="@anaClauu24"
+          opinionText="¡Me encanta recibir la Newsletter del Dr. Simons! Siempre encuentro noticias interesantes y útiles sobre cirugía estética y cuidado de la piel. Estoy muy agradecido por la información y los consejos que comparten en cada edición. ¡Sigan así!"
+        />
+      </div>
+    </div>
   </div>
 
-  <!-- Next/Prev Buttons -->
-  <div class="flex justify-center gap-8 py-8">
+  <style>
+    .swiper-slide {
+      width: auto;
+    }
+  </style>
+
+  <div class="flex justify-center gap-8 pt-8">
     <div
-      class="grid place-content-center p-1 border-2 border-white rounded-full bg-white bg-opacity-10 cursor-pointer active:scale-90 transition-all duration-100 ease-linear"
+      class="swiper-button-ant grid place-content-center p-1 border-2 border-white rounded-full bg-white bg-opacity-10 cursor-pointer active:scale-90 transition-all duration-100 ease-linear"
     >
       <ion-icon class="text-white text-4xl" name="chevron-back-outline"
       ></ion-icon>
     </div>
     <div
-      class="grid place-content-center p-1 border-2 border-white rounded-full bg-white bg-opacity-10 cursor-pointer active:scale-90 transition-all duration-100 ease-linear"
+      class="swiper-button-sig grid place-content-center p-1 border-2 border-white rounded-full bg-white bg-opacity-10 cursor-pointer active:scale-90 transition-all duration-100 ease-linear"
     >
       <ion-icon class="text-white text-4xl" name="chevron-forward-outline"
       ></ion-icon>
     </div>
   </div>
-</section>
 
-<script
-  type="module"
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script
-  nomodule
-  src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <!-- Swiper API -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+  ></script>
+  <script type="module">
+    document.addEventListener("DOMContentLoaded", function () {
+      import("../../public/scripts/swiperApi.js").then((module) => {
+        const initSwiper = module.initSwiper;
+        initSwiper();
+      });
+    });
+  </script>
+</section>
