@@ -18,10 +18,10 @@ d.addEventListener("keyup", (e) => {
         /[^a-zA-ZáéíóúÁÉÍÓÚñÑ´\s]/g,
         ""
       );
-      $errorName.classList.remove("hidden");
-      $errorName.classList.add("block");
       $errorName.textContent =
         "El nombre solo puede contener letras y espacios";
+      $errorName.classList.remove("hidden");
+      $errorName.classList.add("block");
     } else {
       $errorName.classList.remove("block");
       $errorName.classList.add("hidden");
@@ -29,7 +29,13 @@ d.addEventListener("keyup", (e) => {
   } else if (e.target === $inputEmail) {
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // Expresión regular que valida input-email
     if (!regex.test($inputEmail.value)) {
-      console.error("Por favor, introduce una dirección de correo válida");
+      $errorEmail.innerHTML =
+        "Por favor, introduce una dirección de correo válida";
+      $errorEmail.classList.remove("hidden");
+      $errorEmail.classList.add("block");
+    } else {
+      $errorEmail.classList.remove("block");
+      $errorEmail.classList.add("hidden");
     }
   }
 });

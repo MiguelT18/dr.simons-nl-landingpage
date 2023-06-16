@@ -101,7 +101,7 @@ import OpinionCard from "../components/OpinionCard.astro";
   ></script>
   <script type="module">
     document.addEventListener("DOMContentLoaded", function () {
-      import("../../public/scripts/swiperApi.js").then((module) => {
+      import("/scripts/swiperApi.js").then((module) => {
         const initSwiper = module.initSwiper;
         initSwiper();
       });
