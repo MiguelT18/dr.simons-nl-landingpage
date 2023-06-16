@@ -2,6 +2,8 @@
 import Button from "./button.astro";
 ---
 
+<script type="module" src="/scripts/form_validation.js"></script>
+
 <form id="form" method="POST" class="flex flex-col gap-3 mt-4">
   <input
     class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
@@ -10,8 +12,7 @@ import Button from "./button.astro";
     id="input-name"
     placeholder="Nombre Completo"
   />
-  <p class="hidden bg-red-500 text-white pt-4 px-2 -mt-6 -z-10" id="error-name">
-  </p>
+  <p class="hidden text-red-500 pl-2 -mt-2" id="error-name"></p>
   <input
     class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
     type="email"
@@ -19,12 +20,6 @@ import Button from "./button.astro";
     id="input-email"
     placeholder="Correo Electrónico"
   />
-  <p
-    class="hidden bg-red-500 text-white pt-4 px-2 -mt-6 -z-10"
-    id="error-email"
-  >
-  </p>
+  <p class="hidden text-red-500 pl-2 -mt-2" id="error-email"></p>
   <Button />
 </form>
-
-<script type="module" src="/scripts/form_validation.js"></script>
