@@ -1,7 +1,3 @@
----
-import Button from "../components/button.astro";
----
-
 <article class="flex flex-col max-w-[590px]">
   <h3
     class="text-blue-light font-montserrat dark:text-just-white text-clamp-md font-bold uppercase my-4 max-lg:text-center"
@@ -15,5 +11,9 @@ import Button from "../components/button.astro";
     óptima. Este servicio es totalmente gratuito y está diseñado para cumplir
     con tus expectativas y asistirte en cada paso de tu viaje.
   </p>
-  <Button />
+  <a
+    href="#header"
+    class="bg-main-button py-2 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95"
+    >Quiero suscribirme ya</a
+  >
 </article>

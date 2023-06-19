@@ -32,10 +32,27 @@ const { title } = Astro.props;
   </head>
   <body data-darkmode>
     <slot />
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
   </body>
 </html>
 
 <style>
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     background-color: #fff;
     color: #222;

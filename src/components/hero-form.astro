@@ -1,7 +1,3 @@
----
-import Button from "./button.astro";
----
-
 <script type="module" src="/scripts/form_validation.js"></script>
 
 <form id="form" method="POST" class="flex flex-col gap-3 mt-4">
@@ -21,5 +17,9 @@ import Button from "./button.astro";
     placeholder="Correo Electrónico"
   />
   <p class="hidden text-red-500 pl-2 -mt-2" id="error-email"></p>
-  <Button />
+  <a
+    href="/thanks"
+    class="bg-main-button py-2 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95"
+    >Suscríbete</a
+  >
 </form>

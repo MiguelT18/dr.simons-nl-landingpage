@@ -1,0 +1,23 @@
+---
+// Light Switch
+import switchLightButton from "/assets/switch-mode/switch-light-button.png";
+import roundLightButton from "/assets/switch-mode/round-light-button.png";
+---
+
+<!-- Switch Dark Button -->
+<div class="max-sm:fixed z-10 max-sm:bottom-[20px] max-sm:right-[20px]">
+  <label id="switch-label" class="h-fit relative cursor-pointer" for="switch">
+    <img
+      class="drop-shadow-custom"
+      id="switch-button"
+      src={switchLightButton}
+      alt="switch-button"
+    />
+    <img
+      id="round-button"
+      class="absolute -top-[6px] transform transition-transform duration-300 ease-out"
+      src={roundLightButton}
+      alt="round-button"
+    />
+  </label>
+</div>
