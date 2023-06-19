@@ -1,10 +1,29 @@
 ---
-import Header from "../layouts/header.astro";
+import DarkModeButton from "../components/DarkModeButton.astro";
+import LightLogo from "/assets/logos/light-logo.png";
 ---
 
-<Header />
-<h1
-  class="grid place-content-center h-screen bg-blue-light dark:bg-blue-dark text-white text-2xl uppercase font-bold font-sans-serif"
->
-  En Mantenimiento...
-</h1>
+<header data-darkmode class="flex justify-around items-center my-4">
+  <img
+    class="w-logo-header-clamp"
+    id="header-logo"
+    src={LightLogo}
+    alt="Logotipo"
+  />
+  <DarkModeButton />
+</header>
+
+<script>
+  const switchButton = document.getElementById("switch") as HTMLInputElement;
+
+  // Load the dark mode state from localStorage
+  const darkMode = localStorage.getItem("darkMode") === "true";
+  switchButton.checked = darkMode;
+  document.documentElement.classList.toggle("dark", darkMode);
+
+  switchButton.addEventListener("change", function () {
+    // Save the dark mode state to localStorage
+    localStorage.setItem("darkMode", String(this.checked));
+    document.documentElement.classList.toggle("dark", this.checked);
+  });
+</script>
