@@ -1,0 +1,16 @@
+---
+import Hero from "./Hero.astro";
+import HeroImage from "/assets/hero-light-img.png";
+---
+
+<section
+  class="max-w-[1420px] mx-[18px] mb-16 flex justify-evenly lg:my-16 items-center sm:mx-auto"
+>
+  <Hero />
+  <img
+    id="hero-img"
+    class="h-fit w-hero-clamp max-lg:hidden"
+    src={HeroImage}
+    alt="Imagen principal de la Newsletter"
+  />
+</section>
