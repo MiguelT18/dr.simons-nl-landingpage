@@ -2,23 +2,39 @@
 // Light Switch
 import switchLightButton from "/assets/switch-mode/switch-light-button.png";
 import roundLightButton from "/assets/switch-mode/round-light-button.png";
+// Dark Switch
+import switchDarkButton from "/assets/switch-mode/switch-dark-button.png";
+import roundDarkButton from "/assets/switch-mode/round-dark-button.png";
 ---
 
-<!-- Switch Dark Button -->
 <div class="max-sm:fixed z-10 max-sm:bottom-[20px] max-sm:right-[20px]">
   <input type="checkbox" id="switch" class="hidden" />
   <label id="switch-label" class="h-fit relative cursor-pointer" for="switch">
+    <!-- Light Button Images -->
     <img
+      id="switch-light-button"
       class="drop-shadow-custom"
-      id="switch-button"
       src={switchLightButton}
-      alt="switch-button"
+      alt="switch-light-button"
     />
     <img
-      id="round-button"
+      id="round-light-button"
       class="absolute -top-[6px] transform transition-transform duration-300 ease-out"
       src={roundLightButton}
-      alt="round-button"
+      alt="round-light-button"
+    />
+    <!-- Dark Button Images -->
+    <img
+      id="switch-dark-button"
+      class="hidden drop-shadow-custom"
+      src={switchDarkButton}
+      alt="switch-dark-button"
+    />
+    <img
+      id="round-dark-button"
+      class="hidden absolute -top-[6px] transform transition-transform duration-300 ease-out"
+      src={roundDarkButton}
+      alt="round-dark-button"
     />
   </label>
 </div>
