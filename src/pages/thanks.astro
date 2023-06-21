@@ -1,10 +1,18 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Header from "../components/main-layout/Header/Header.astro";
+import ThanksLayout from "../layouts/ThanksLayout.astro";
+
+import Header from "../components/thanks-layout/Header/Header.astro";
+import Hero from "../components/thanks-layout/Hero/Warning.astro";
+import Consulta from "../components/thanks-layout/Consulta/Consulta.astro";
 ---
 
-<Layout title="¡Gracias por suscribirte!">
+<ThanksLayout title="¡Gracias por suscribirte!">
+  <!-- Header -->
   <Header />
-
-  <script type="module" src="/scripts/darkmode.js"></script>
-</Layout>
+  <main class="overflow-x-hidden">
+    <!-- Sección #1 -->
+    <Hero />
+    <!-- Sección #2 -->
+    <Consulta />
+  </main>
+</ThanksLayout>

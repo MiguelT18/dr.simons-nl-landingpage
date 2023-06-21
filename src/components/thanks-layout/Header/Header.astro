@@ -1,0 +1,16 @@
+---
+import DarkModeButton from "../../../components/main-layout/Header/DarkModeButton.astro";
+---
+
+<header
+  class="bg-blue-light dark:bg-blue-dark flex justify-evenly items-center py-4 px-6"
+>
+  <h1
+    class="text-just-white max-w-[800px] text-center uppercase font-sans-serif text-clamp-md font-bold"
+  >
+    ¡Te damos la bienvenida a nuestro boletín informativo sobre rinoplastía!
+  </h1>
+  <DarkModeButton />
+
+  <script type="module" src="/scripts/darkmode.js"></script>
+</header>
