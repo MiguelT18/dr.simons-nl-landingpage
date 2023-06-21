@@ -2,9 +2,6 @@
 // Light Switch
 import switchLightButton from "/assets/switch-mode/switch-light-button.png";
 import roundLightButton from "/assets/switch-mode/round-light-button.png";
-// Dark Switch
-import switchDarkButton from "/assets/switch-mode/switch-dark-button.png";
-import roundDarkButton from "/assets/switch-mode/round-dark-button.png";
 ---
 
 <div class="max-sm:fixed z-10 max-sm:bottom-[20px] max-sm:right-[20px]">
@@ -22,19 +19,6 @@ import roundDarkButton from "/assets/switch-mode/round-dark-button.png";
       class="absolute -top-[6px] transform transition-transform duration-300 ease-out"
       src={roundLightButton}
       alt="round-light-button"
-    />
-    <!-- Dark Button Images -->
-    <img
-      id="switch-dark-button"
-      class="hidden drop-shadow-custom"
-      src={switchDarkButton}
-      alt="switch-dark-button"
-    />
-    <img
-      id="round-dark-button"
-      class="hidden absolute -top-[6px] transform transition-transform duration-300 ease-out"
-      src={roundDarkButton}
-      alt="round-dark-button"
     />
   </label>
 </div>
