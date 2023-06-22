@@ -1,0 +1,47 @@
+---
+import Facebook from "/assets/social-media/facebook.png";
+import Instagram from "/assets/social-media/instagram.png";
+import Tiktok from "/assets/social-media/tiktok.png";
+---
+
+<div>
+  <h1
+    class="text-center text-clamp-lg font-sans-serif font-bold uppercase py-8 mx-5"
+  >
+    Sígueme en mis Redes Sociales
+  </h1>
+  <div class="flex justify-center mx-auto w-16 gap-10 mb-10 px-2">
+    <img
+      id="facebook-icon"
+      class="active:scale-75 transform transition-transform ease-out"
+      src={Facebook}
+      alt="Facebook Icon"
+    />
+    <img
+      id="instagram-icon"
+      class="active:scale-75 transform transition-transform ease-out"
+      src={Instagram}
+      alt="Instagram Icon"
+    />
+    <img
+      id="tiktok-icon"
+      class="active:scale-75 transform transition-transform ease-out"
+      src={Tiktok}
+      alt="TikTok Icon"
+    />
+  </div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    document.getElementById("facebook-icon").onclick = function () {
+      window.open("https://www.facebook.com", "_blank");
+    };
+    document.getElementById("instagram-icon").onclick = function () {
+      window.open("https://www.instagram.com", "_blank");
+    };
+    document.getElementById("tiktok-icon").onclick = function () {
+      window.open("https://www.tiktok.com", "_blank");
+    };
+  });
+</script>

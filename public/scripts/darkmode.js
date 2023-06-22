@@ -47,7 +47,7 @@ function updateUI(isChecked) {
       $roundLightButton.src = "/assets/switch-mode/round-dark-button.png";
 
       // round button translation
-      $roundLightButton.classList.add("translate-x-full");
+      $roundLightButton.style.transform = "translateX(100%)"
 
       // Header Logo
       $headerLogo && ($headerLogo.src = "/assets/logos/dark-logo.png");
@@ -60,7 +60,7 @@ function updateUI(isChecked) {
       $roundLightButton.src = "/assets/switch-mode/round-light-button.png";
 
       // round button translation
-      $roundLightButton.classList.remove("translate-x-full");
+      $roundLightButton.style.transform = "translateX(0%)"
 
       // Header Logo
       $headerLogo && ($headerLogo.src = "/assets/logos/light-logo.png");

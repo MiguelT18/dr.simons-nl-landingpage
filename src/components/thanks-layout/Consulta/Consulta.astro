@@ -1,8 +1,18 @@
 ---
 import ConsultaCard from "../../thanks-layout/Consulta/ConsultaCard.astro";
+import RedesSociales from "./RedesSociales.astro";
+import Footer from "../../main-layout/Footer/Footer.astro";
 ---
 
-<section>
-  <h1>¡Regístrate en la consulta en línea</h1>
-  <ConsultaCard />
+<section class="overflow-hidden">
+  <h1
+    class="text-center text-clamp-lg font-sans-serif font-bold uppercase pt-8 pb-16"
+  >
+    ¡Regístrate en la consulta en línea
+  </h1>
+  <div class="mx-5">
+    <ConsultaCard />
+  </div>
+  <RedesSociales />
+  <Footer />
 </section>
