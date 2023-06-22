@@ -1,0 +1,1 @@
+import"https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js";window.addEventListener("DOMContentLoaded",o=>{document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(t){t.preventDefault(),document.querySelector(this.getAttribute("href")).scrollIntoView({behavior:"smooth"})})})});

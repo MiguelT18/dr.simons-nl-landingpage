@@ -1,55 +1,72 @@
 const d = document;
 const w = window;
 
+// button elements
+const $switchLightButton = d.getElementById("switch-light-button"),
+  $roundLightButton = d.getElementById("round-light-button");
+
+const $heroImgElement = d.getElementById("hero-img");
+
+const $headerLogo = d.getElementById("header-logo");
+
 w.addEventListener("DOMContentLoaded", () => {
-  const $roundButton = d.getElementById("round-button");
-  const $switchButton = d.getElementById("switch-button");
-  const $headerLogo = d.getElementById("header-logo");
-  const $heroImg = d.getElementById("hero-img");
+  const $switchElement = d.getElementById("switch");
 
-  // Recupera el modo oscuro guardado del localStorage
-  const savedDarkMode = localStorage.getItem("darkMode") === "true";
+  // Obtener el estado actual del localStorage y actualizar la UI
+  const savedIsChecked = localStorage.getItem("isChecked") === "true";
+  $switchElement.checked = savedIsChecked;
+  updateUI(savedIsChecked);
 
-  // Aplica el modo oscuro si estaba guardado en localStorage
-  if (savedDarkMode) {
-    toggleDarkMode(true);
-    $roundButton.classList.add("translate-x-full");
-  }
+  $switchElement.addEventListener("click", (e) => {
+    const isChecked = e.target.checked;
 
-  d.getElementById("switch-label").addEventListener("click", () => {
-    // Comprueba si el modo oscuro está activado
-    const isDarkMode = $roundButton.classList.toggle("translate-x-full");
+    // Guardar el estado actual en el localStorage
+    localStorage.setItem("isChecked", isChecked.toString());
 
-    // Guarda el estado del modo oscuro en localStorage
-    localStorage.setItem("darkMode", isDarkMode);
-
-    toggleDarkMode(isDarkMode);
+    updateUI(isChecked);
   });
+});
 
-  function toggleDarkMode(isDarkMode) {
-    const mode = isDarkMode ? "dark" : "light";
-    const logo = `/assets/logos/${mode}-logo.png`;
-    const roundButtonImage = `/assets/switch-mode/round-${mode}-button.png`;
-    const switchButtonImage = `/assets/switch-mode/switch-${mode}-button.png`;
-    const heroImgMode = `/assets/hero-${mode}-img.png`;
+function updateUI(isChecked) {
+  d.body.classList.toggle("is-active", isChecked);
 
-    $heroImg.src = heroImgMode;
-    $roundButton.src = roundButtonImage;
-    $switchButton.src = switchButtonImage;
-    $headerLogo.src = logo;
-
-    // Data Atributos
-    const darkmodeElements = d.querySelectorAll("[data-darkmode]");
-
-    // Aplica la clase a todos los elementos seleccionados
-    darkmodeElements.forEach((e) => {
-      e.classList.toggle("is-active", isDarkMode);
+  if ($switchLightButton && $roundLightButton) {
+    // data attributes
+    const $dataAttributes = d.querySelectorAll("[data-darkmode]");
+    $dataAttributes.forEach((e) => {
+      if (isChecked) {
+        e.classList.add("dark");
+      } else {
+        e.classList.remove("dark");
+      }
     });
 
-    if (isDarkMode) {
-      d.documentElement.classList.add("dark");
+    if (isChecked) {
+      //? Dark Mode
+      $switchLightButton.src = "/assets/switch-mode/switch-dark-button.png";
+      $roundLightButton.src = "/assets/switch-mode/round-dark-button.png";
+
+      // round button translation
+      $roundLightButton.style.transform = "translateX(100%)"
+
+      // Header Logo
+      $headerLogo && ($headerLogo.src = "/assets/logos/dark-logo.png");
+
+      // Hero Image
+      $heroImgElement && ($heroImgElement.src = "/assets/hero-dark-img.png");
     } else {
-      d.documentElement.classList.remove("dark");
+      //? Light Mode
+      $switchLightButton.src = "/assets/switch-mode/switch-light-button.png";
+      $roundLightButton.src = "/assets/switch-mode/round-light-button.png";
+
+      // round button translation
+      $roundLightButton.style.transform = "translateX(0%)"
+
+      // Header Logo
+      $headerLogo && ($headerLogo.src = "/assets/logos/light-logo.png");
+
+      // Hero Image
+      $heroImgElement && ($heroImgElement.src = "/assets/hero-light-img.png");
     }
   }
-});
+}
