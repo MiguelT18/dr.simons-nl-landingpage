@@ -43,8 +43,8 @@ function updateUI(isChecked) {
 
     if (isChecked) {
       //? Dark Mode
-      $switchLightButton.src = "/assets/switch-mode/switch-dark-button.png";
-      $roundLightButton.src = "/assets/switch-mode/round-dark-button.png";
+      $switchLightButton.src = "/assets/switch-mode/switch-dark-button.webp";
+      $roundLightButton.src = "/assets/switch-mode/round-dark-button.webp";
 
       // round button translation
       $roundLightButton.style.transform = "translateX(100%)"
@@ -53,11 +53,11 @@ function updateUI(isChecked) {
       $headerLogo && ($headerLogo.src = "/assets/logos/dark-logo.png");
 
       // Hero Image
-      $heroImgElement && ($heroImgElement.src = "/assets/hero-dark-img.png");
+      $heroImgElement && ($heroImgElement.src = "/assets/hero-dark-img.webp");
     } else {
       //? Light Mode
-      $switchLightButton.src = "/assets/switch-mode/switch-light-button.png";
-      $roundLightButton.src = "/assets/switch-mode/round-light-button.png";
+      $switchLightButton.src = "/assets/switch-mode/switch-light-button.webp";
+      $roundLightButton.src = "/assets/switch-mode/round-light-button.webp";
 
       // round button translation
       $roundLightButton.style.transform = "translateX(0%)"
@@ -66,7 +66,7 @@ function updateUI(isChecked) {
       $headerLogo && ($headerLogo.src = "/assets/logos/light-logo.png");
 
       // Hero Image
-      $heroImgElement && ($heroImgElement.src = "/assets/hero-light-img.png");
+      $heroImgElement && ($heroImgElement.src = "/assets/hero-light-img.webp");
     }
   }
 }
