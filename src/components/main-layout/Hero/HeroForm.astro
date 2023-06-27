@@ -1,25 +1,25 @@
 <form id="form" method="POST" class="flex flex-col gap-3 mt-4" novalidate>
-  <input
-    class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
-    type="text"
-    name="fullname"
-    id="input-name"
-    placeholder="Nombre Completo"
-  />
-  <p id="error-name" class="hidden text-red-500 pl-2 -mt-2"></p>
-  <input
-    class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
-    type="email"
-    name="email"
-    id="input-email"
-    placeholder="Correo Electrónico"
-  />
-  <p id="error-email" class="hidden text-red-500 pl-2 -mt-2"></p>
-  <a
-    id="submit-button"
-    class="bg-main-button py-2 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95"
-    href="/thanks">Suscribete</a
-  >
+	<input
+		class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
+		type="text"
+		name="fullname"
+		id="input-name"
+		placeholder="Nombre Completo"
+	/>
+	<p id="error-name" class="hidden text-red-500 pl-2 -mt-2"></p>
+	<input
+		class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
+		type="email"
+		name="email"
+		id="input-email"
+		placeholder="Correo Electrónico"
+	/>
+	<p id="error-email" class="hidden text-red-500 pl-2 -mt-2"></p>
+	<button
+		id="submit-button"
+		class="bg-main-button py-2 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95">
+		Suscríbete</button
+	>
 </form>
 
 <script type="module" src="/scripts/form_validation.js"></script>
