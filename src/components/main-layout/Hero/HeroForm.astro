@@ -1,4 +1,4 @@
-<form id="form" method="POST" class="flex flex-col gap-3 mt-4">
+<form id="form" method="POST" class="flex flex-col gap-3 mt-4" novalidate>
   <input
     class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
     type="text"
@@ -6,7 +6,7 @@
     id="input-name"
     placeholder="Nombre Completo"
   />
-  <p class="hidden text-red-500 pl-2 -mt-2" id="error-name"></p>
+  <p id="error-name" class="hidden text-red-500 pl-2 -mt-2"></p>
   <input
     class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black"
     type="email"
@@ -14,11 +14,11 @@
     id="input-email"
     placeholder="Correo Electrónico"
   />
-  <p class="hidden text-red-500 pl-2 -mt-2" id="error-email"></p>
+  <p id="error-email" class="hidden text-red-500 pl-2 -mt-2"></p>
   <a
-    href="/thanks"
+    id="submit-button"
     class="bg-main-button py-2 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95"
-    >Suscríbete</a
+    href="/thanks">Suscribete</a
   >
 </form>
 

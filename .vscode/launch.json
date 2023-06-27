@@ -11,6 +11,13 @@
       "program": "${file}",
       "console": "integratedTerminal",
       "justMyCode": true
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "This program",
+      "skipFiles": ["<node_internals>/**"],
+      "program": "${file}"
     }
   ]
 }
