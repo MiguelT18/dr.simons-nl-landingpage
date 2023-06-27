@@ -18,26 +18,25 @@ const errors = {
 
 const $button = d.getElementById("submit-button");
 
+function validateField(input, error, errorMessage) {
+	if (input.value.trim() === "") {
+		error.innerText = errorMessage;
+		error.classList.remove("hidden");
+	} else {
+		error.innerText = "";
+	}
+}
+
 // Validar el envío del formulario
 //? form.submit
 $form.addEventListener("submit", (e) => {
 	e.preventDefault();
 
 	// Validar el envío del campo del nombre
-	if (inputs.name.value === "") {
-		errors.name.innerText = "Este campo no puede ir vacio";
-		errors.name.classList.remove("hidden");
-	} else {
-		errors.name.innerText = "";
-	}
+	validateField(inputs.name, errors.name, "Este campo no puede ir vacio");
 
 	// Validar el envío del campo del email
-	if (inputs.email.value === "") {
-		errors.email.innerText = "Este campo no puede ir vacio";
-		errors.email.classList.remove("hidden");
-	} else {
-		errors.email.innerText = "";
-	}
+	validateField(inputs.email, errors.email, "Este campo no puede ir vacio");
 
 	// Verificar si no hay errores de validación
 	if (inputs.name.value !== "" && inputs.email.value !== "") {
@@ -54,12 +53,7 @@ inputs.name.addEventListener("input", (e) => {
 	// Reemplazar los caracteres inválidos por una cadena vacía
 	e.target.value = inputValue.replace(reg, "");
 
-	if (inputValue === "") {
-		errors.name.classList.remove("hidden");
-		errors.name.innerHTML = "Este campo no puede ir vacío";
-	} else {
-		errors.name.innerText = "";
-	}
+	validateField(inputs.name, errors.name, "Este campo no puede ir vacio");
 });
 
 // Validar el campo del correo electrónico
@@ -68,9 +62,9 @@ inputs.email.addEventListener("input", (e) => {
 	let inputValue = e.target.value;
 	const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-	if (!inputValue === "") {
-		errors.name.classList.add("remove");
+	if (inputValue.trim() !== "" && !reg.test(inputValue)) {
+		errors.email.innerText = "El correo electrónico no es válido";
+	} else {
+		errors.email.innerText = "";
 	}
 });
-
-// TODO: Conectar el botón con las validaciones del formulario
