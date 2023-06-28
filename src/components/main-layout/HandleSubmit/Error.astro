@@ -1,0 +1,18 @@
+---
+import InfoDataCard from "./InfoDataCard.astro";
+---
+
+<script>
+	const $button = document.getElementById("error-data-content");
+	console.log($button);
+</script>
+<div
+	class="bg-black bg-opacity-80 grid place-content-center w-full h-screen fixed z-20">
+	<InfoDataCard
+		id="error-data-content"
+		status="Parece que hubo un problema"
+		message="Parece que hubo un problema al enviar tus datos, por favor inténtalo más tarde."
+		type="button"
+		buttonText="Continuar"
+	/>
+</div>

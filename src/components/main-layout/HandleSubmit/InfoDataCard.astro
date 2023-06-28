@@ -1,0 +1,26 @@
+<div class="max-w-[600px] bg-gradient-linear-light py-6 px-8 rounded-3xl">
+	<h2
+		class="mb-2 text-white font-sans-serif uppercase font-bold text-center text-clamp-md">
+		{Astro.props.status}
+	</h2>
+	<p class="text-white font-sans-serif text-center text-clamp-sm">
+		{Astro.props.message}
+	</p>
+	{
+		Astro.props.type === "button" && (
+			<button class="bg-main-button w-full py-2 mt-5 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95">
+				{Astro.props.buttonText}
+			</button>
+		)
+	}
+
+	{
+		Astro.props.type === "image" && (
+			<img
+				class="mx-auto pt-3"
+				src={Astro.props.imageUrl}
+				alt={Astro.props.imageAlt}
+			/>
+		)
+	}
+</div>

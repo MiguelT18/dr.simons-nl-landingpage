@@ -4,23 +4,30 @@ import Header from "../components/main-layout/Header/Header.astro";
 import Opinions from "../components/main-layout/Opinions/Opinions.astro";
 import Footer from "../components/main-layout/Footer/Footer.astro";
 import HeroContent from "../components/main-layout/Hero/HeroContent.astro";
-
-// Images
 import Unete from "../components/main-layout/Unete/Unete.astro";
+
+// HandleSubmit components
+import Sending from "../components/main-layout/HandleSubmit/Sending.astro";
+import Success from "../components/main-layout/HandleSubmit/Success.astro";
+import Error from "../components/main-layout/HandleSubmit/Error.astro";
 ---
 
 <Layout title="Newsletter - Dr.Simons">
-  <!-- Header -->
-  <Header />
-  <main>
-    <!-- Sección #1 -->
-    <HeroContent />
-    <!-- Sección #2 -->
-    <Opinions />
-    <!-- Sección #3 -->
-    <Unete />
-  </main>
-  <!-- Footer -->
-  <Footer />
-  <script type="module" src="/scripts/darkmode.js"></script>
+	<!-- Header -->
+	<Header />
+
+	<main>
+		<!-- Sección #1 -->
+		<HeroContent />
+
+		<!-- Sección #2 -->
+		<Opinions />
+
+		<!-- Sección #3 -->
+		<Unete />
+	</main>
+
+	<!-- Footer -->
+	<Footer />
+	<script type="module" src="/scripts/darkmode.js"></script>
 </Layout>

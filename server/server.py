@@ -6,6 +6,7 @@ import json
 app = Flask(__name__)
 CORS(app)
 
+app_state = "idle" # Estado inicial: inactivo
 
 # Ruta que menaje todas las solicitudes que no coinciden con las rutas definidas
 @app.route('/dist/index.html', defaults={'path': ''})
@@ -20,7 +21,7 @@ def serve_frontend(path):
 
 def add_contact_to_list(contact_id, list_id):
     # URL de la API de ActiveCampaign para agregar un contacto a una lista
-    url = f"https://hotmai46650.api-us1.com/api/3/contactLists"
+    url = "https://hotmai46650.api-us1.com/api/3/contactLists"
 
     # Datos para agregar el contacto a la lista
     data = {

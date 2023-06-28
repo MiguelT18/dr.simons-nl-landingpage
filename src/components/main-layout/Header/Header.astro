@@ -3,16 +3,12 @@ import LightLogo from "/assets/logos/light-logo.png";
 import DarkModeButton from "./DarkModeButton.astro";
 ---
 
-<header
-  id="header"
-  class="flex justify-around items-center my-4 relative"
-  data-darkmode
->
-  <img
-    class="w-logo-header-clamp"
-    id="header-logo"
-    src={LightLogo}
-    alt="Logotipo"
-  />
-  <DarkModeButton />
+<header id="header" class="flex justify-around items-center py-4" data-darkmode>
+	<img
+		class="w-logo-header-clamp"
+		id="header-logo"
+		src={LightLogo}
+		alt="Logotipo"
+	/>
+	<DarkModeButton />
 </header>

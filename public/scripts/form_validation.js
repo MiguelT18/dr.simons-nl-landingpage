@@ -67,4 +67,5 @@ inputs.email.addEventListener("input", (e) => {
 	} else {
 		errors.email.innerText = "";
 	}
+	validateField(inputs.email, errors.email, "Este campo no puede ir vacio");
 });

@@ -1,6 +1,6 @@
 ---
 export interface Props {
-  title: string;
+	title: string;
 }
 
 const { title } = Astro.props;
@@ -8,56 +8,59 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image" href="/assets/logos/title-logo.webp" />
-    <title>{title}</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;500;700&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Ionic Icons -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <style>
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        background-color: #fff;
-        color: #222;
-      }
-      [data-darkmode].is-active {
-        background-color: #222;
-        color: #fff;
-      }
-    </style>
-  </head>
-  <body data-darkmode>
-    <slot />
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image" href="/assets/logos/title-logo.webp" />
+		<title>{title}</title>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;500;700&display=swap"
+			rel="stylesheet"
+		/>
+		<!-- Ionic Icons -->
+		<script
+			type="module"
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+		></script>
+		<script
+			nomodule
+			src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+		></script>
+		<style>
+			html {
+				scroll-behavior: smooth;
+			}
+			body {
+				background-color: #fff;
+				color: #222;
+			}
+			[data-darkmode].is-active {
+				background-color: #222;
+				color: #fff;
+			}
+		</style>
+	</head>
+	<body data-darkmode>
+		<slot />
 
-    <script>
-      window.addEventListener("DOMContentLoaded", (event) => {
-        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-          anchor.addEventListener("click", function (e) {
-            e.preventDefault();
+		<script>
+			window.addEventListener("DOMContentLoaded", (event) => {
+				document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+					anchor.addEventListener("click", function (e) {
+						e.preventDefault();
 
-            document.querySelector(this.getAttribute("href")).scrollIntoView({
-              behavior: "smooth",
-            });
-          });
-        });
-      });
-    </script>
-  </body>
+						document
+							.querySelector(this.getAttribute("href"))
+							.scrollIntoView({
+								behavior: "smooth",
+							});
+					});
+				});
+			});
+		</script>
+	</body>
 </html>

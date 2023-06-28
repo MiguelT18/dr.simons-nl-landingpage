@@ -1,0 +1,17 @@
+---
+import InfoDataCard from "./InfoDataCard.astro";
+
+// Loading Icon
+import Loading from "/assets/loading.gif";
+---
+
+<div
+	class="bg-black bg-opacity-80 grid place-content-center w-full h-screen fixed z-20">
+	<InfoDataCard
+		status="Estamos enviando tus datos..."
+		message="Por favor espera mientras se envían tus datos"
+		type="image"
+		imageUrl={Loading}
+		imageAlt="Gif Animado"
+	/>
+</div>
