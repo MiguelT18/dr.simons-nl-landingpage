@@ -1,88 +1,88 @@
-import { API_TOKEN, LIST_ID } from "./config.js";
+/** @format */
 
+// Global objects
 const d = document;
+const w = window;
 
-// Form element
 const $form = d.getElementById("form");
 
-// Input elements
 const inputs = {
-  name: d.getElementById("input-name"),
-  email: d.getElementById("input-email"),
+	name: d.getElementById("input-name"),
+	email: d.getElementById("input-email"),
 };
 
-// Error elements
 const errors = {
-  name: d.getElementById("error-name"),
-  email: d.getElementById("error-email"),
+	name: d.getElementById("error-name"),
+	email: d.getElementById("error-email"),
 };
 
-// Regex patterns
-const patterns = {
-  name: /^[a-zA-ZáéíóúÁÉÍÓÚñÑ´\s]*$/,
-};
+const $button = d.getElementById("submit-button");
 
-// Handle input validation
-inputs.name.addEventListener("keyup", (e) => {
-  //? input name
-  let inputValue = e.target.value;
-  if (!patterns.name.test(inputValue)) {
-    inputValue = inputValue.replace(/[^a-zA-ZáéíóúÁÉÍÓÚñÑ´\s]/g, "");
-    inputs.name.value = inputValue;
-  }
-  if (inputs.name.value !== "") {
-    errors.name.classList.remove("block");
-    errors.name.classList.add("hidden");
-  }
+function validateField(input, error, errorMessage) {
+	if (input.value.trim() === "") {
+		error.innerText = errorMessage;
+		error.classList.remove("hidden");
+	} else {
+		error.innerText = "";
+	}
+}
+
+// Validar el envío del formulario
+//? form.submit
+$form.addEventListener("submit", (e) => {
+	e.preventDefault();
+
+	// Validar el envío del campo del nombre
+	validateField(inputs.name, errors.name, "Este campo no puede ir vacio");
+
+	// Validar el envío del campo del email
+	validateField(inputs.email, errors.email, "Este campo no puede ir vacio");
+
+	// Verificar si no hay errores de validación
+	if (inputs.name.value !== "" && inputs.email.value !== "") {
+		// Enviar la solicitud al servidor de Flask
+		fetch("http://localhost:5000/api/contacts", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				email: inputs.email.value,
+				firstName: inputs.name.value,
+			}),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log("Respuesta del servidor:", data);
+				w.location.href = "/thanks";
+			})
+			.catch((error) => {
+				console.error("Error al enviar la solicitud:", error);
+			});
+	}
 });
 
-inputs.email.addEventListener("keyup", (e) => {
-  //? input email
-  if (inputs.email.value !== "") {
-    errors.email.classList.remove("block");
-    errors.email.classList.add("hidden");
-  }
+// Validar el campo del nombre
+//? input.name
+inputs.name.addEventListener("input", (e) => {
+	let inputValue = e.target.value;
+	const reg = /[^a-zA-Z\s´áéíóúÁÉÍÓÚ]/g;
+	// Reemplazar los caracteres inválidos por una cadena vacía
+	e.target.value = inputValue.replace(reg, "");
+
+	validateField(inputs.name, errors.name, "Este campo no puede ir vacio");
 });
 
-$form.addEventListener("submit", async (e) => {
-  e.preventDefault();
+// Validar el campo del correo electrónico
+inputs.email.addEventListener("input", (e) => {
+	//? input.email
+	let inputValue = e.target.value;
+	const reg = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-  let isValid = true;
-
-  Object.keys(inputs).forEach((key) => {
-    if (inputs[key].value === "") {
-      errors[key].textContent = "Este campo no puede ir vacio";
-      errors[key].classList.add("block");
-      errors[key].classList.remove("hidden");
-      isValid = false;
-      return;
-    }
-  });
-
-  if (isValid) {
-    // Realiza la solicitud HTTP para enviar los datos del formulario al servidor
-    try {
-      const response = await fetch("http://127.0.0.1:5000/api/contacts", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: inputs.name.value,
-          email: inputs.email.value,
-        }),
-      });
-
-      const data = await response.json();
-      if (!response.ok) {
-        // La solicitud ha sido exitosa (código de respuesta 200-299)
-        console.log("Solicitud Exitosa");
-      } else {
-        // La solicitud no fue exitosa (código de respuesta fuera del rango 200-299)
-        console.error("Error en la solicitud: ", data);
-      }
-    } catch (error) {
-      console.error("Hubo un error durante la solicitud: ", error);
-    }
-  }
+	if (inputValue.trim() !== "" && !reg.test(inputValue)) {
+		errors.email.innerText = "El correo electrónico no es válido";
+	} else {
+		errors.email.innerText = "";
+	}
+	validateField(inputs.email, errors.email, "Este campo no puede ir vacio");
 });

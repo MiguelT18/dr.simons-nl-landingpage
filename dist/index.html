@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en" class="astro-SCKKX6R4">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Astro description">
-    <meta name="viewport" content="width=device-width">
-    <link rel="icon" type="image" href="/assets/logos/title-logo.png">
-    <title>Newsletter - Dr.Simons</title>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
-    <!-- Ionic Icons -->
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    
-  <link rel="stylesheet" href="/_astro/index.97e1c202.css" />
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Astro description">
+		<meta name="viewport" content="width=device-width">
+		<link rel="icon" type="image" href="/assets/logos/title-logo.webp">
+		<title>Newsletter - Dr.Simons</title>
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@300;500;700&display=swap" rel="stylesheet">
+		<!-- Ionic Icons -->
+		<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+		<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+		
+	<link rel="stylesheet" href="/_astro/index.7dc9909e.css" />
 <link rel="stylesheet" href="/_astro/index.01f91208.css" /><script type="module" src="/_astro/hoisted.877eedcf.js"></script></head>
-  <body data-darkmode class="astro-SCKKX6R4">
-    
-  
-  <header id="header" class="flex justify-around items-center my-4 relative" data-darkmode>
-  <img class="w-logo-header-clamp" id="header-logo" src="/assets/logos/light-logo.png" alt="Logotipo">
-  <div class="max-lg:fixed z-10 max-lg:bottom-[20px] max-lg:right-[20px]">
+	<body data-darkmode class="astro-SCKKX6R4">
+		
+	
+	<header id="header" class="flex justify-around items-center py-4" data-darkmode>
+	<img class="w-logo-header-clamp" id="header-logo" src="/assets/logos/light-logo.png" alt="Logotipo">
+	<div class="max-lg:fixed z-10 max-lg:bottom-[20px] max-lg:right-[20px]">
   <input type="checkbox" id="switch" class="hidden">
   <label id="switch-label" class="h-fit relative cursor-pointer" for="switch">
     <!-- Light Button Images -->
-    <img id="switch-light-button" class="drop-shadow-custom" src="/assets/switch-mode/switch-light-button.png" alt="switch-light-button">
-    <img id="round-light-button" class="absolute -top-[6px] transform transition-transform duration-300 ease-out" src="/assets/switch-mode/round-light-button.png" alt="round-light-button">
+    <img id="switch-light-button" class="drop-shadow-custom" src="/assets/switch-mode/switch-light-button.webp" alt="switch-light-button">
+    <img id="round-light-button" class="absolute -top-[6px] transform transition-transform duration-300 ease-out" src="/assets/switch-mode/round-light-button.webp" alt="round-light-button">
   </label>
 </div>
 </header>
-  <main>
-    <!-- Sección #1 -->
-    <section class="max-w-[1420px] mx-[18px] mb-16 flex justify-evenly lg:my-16 items-center sm:mx-auto">
+
+	<main>
+		<!-- Sección #1 -->
+		<section class="max-w-[1420px] mx-[18px] mb-16 flex justify-evenly lg:my-16 items-center sm:mx-auto">
   <div class="max-w-[590px] w-full max-lg:mx-auto">
   <h2 class="text-blue-light font-montserrat dark:text-just-white text-clamp-md font-bold uppercase my-2 max-lg:text-center" data-darkmode>
     ¡Suscríbete al Boletín de Rinoplastia y Salud Nasal del Dr. Simons:
@@ -46,20 +47,22 @@
     siempre informado en el apasionante mundo de la rinoplastia y el cuidado
     nasal!.
   </p>
-  <script type="module" src="/scripts/form_validation.js"></script>
-
-<form id="form" method="POST" class="flex flex-col gap-3 mt-4">
-  <input class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black" type="text" name="fullname" id="input-name" placeholder="Nombre Completo">
-  <p class="hidden text-red-500 pl-2 -mt-2" id="error-name"></p>
-  <input class="border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black" type="email" name="email" id="input-email" placeholder="Correo Electrónico">
-  <p class="hidden text-red-500 pl-2 -mt-2" id="error-email"></p>
-  <a href="/thanks" class="bg-main-button py-2 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95">Suscríbete</a>
+  <form id="form" method="POST" class="flex flex-col gap-3 mt-4" novalidate>
+	<input class="text-clamp-sm border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black" type="text" name="fullname" id="input-name" placeholder="Nombre Completo">
+	<p id="error-name" class="hidden text-red-500 pl-2 -mt-2"></p>
+	<input class="text-clamp-sm border-2 border-gray-300 px-3 py-2 rounded placeholder:italic placeholder:text-[16px] dark:text-just-black" type="email" name="email" id="input-email" placeholder="Correo Electrónico">
+	<p id="error-email" class="hidden text-red-500 pl-2 -mt-2"></p>
+	<button id="submit-button" class="bg-main-button py-2 rounded text-white text-center italic hover:bg-red-600 transition-all duration-100 ease-linear active:scale-95">
+		Suscríbete</button>
 </form>
+
+<script type="module" src="/scripts/form_validation.js"></script>
 </div>
-  <img id="hero-img" class="h-fit w-hero-clamp max-lg:hidden" src="/assets/hero-light-img.png" alt="Imagen principal de la Newsletter">
+  <img id="hero-img" class="h-fit w-hero-clamp max-lg:hidden" src="/assets/hero-light-img.webp" alt="Imagen principal de la Newsletter">
 </section>
-    <!-- Sección #2 -->
-    <section class="w-full bg-gradient-linear-light dark:bg-gradient-linear-dark pb-10" data-darkmode>
+
+		<!-- Sección #2 -->
+		<section class="w-full bg-gradient-linear-light dark:bg-gradient-linear-dark pb-10" data-darkmode>
   <h1 class="pt-10 text-just-white text-center text-clamp-lg font-bold font-montserrat uppercase">
     Opiniones de mis Suscriptores
   </h1>
@@ -148,13 +151,14 @@
     });
   </script>
 </section>
-    <!-- Sección #3 -->
-    <section class="max-w-[90%] mx-auto pb-10">
+
+		<!-- Sección #3 -->
+		<section class="max-w-[90%] mx-auto pb-10">
   <h1 class="font-sans-serif font-bold text-blue-light dark:text-white text-clamp-lg text-center uppercase mt-10 my-8">
     Únete Gratis antes de que enviemos el email de hoy
   </h1>
   <div class="max-w-[1420px] mx-[18px] flex justify-evenly lg:my-16 items-center sm:mx-auto max-lg:flex-col">
-    <img class="w-[80%] max-w-[400px]" src="/assets/mail-image.png" alt="Mail Image">
+    <img class="w-[80%] max-w-[400px]" src="/assets/mail-image.webp" alt="Mail Image">
     <article class="flex flex-col max-w-[590px]">
   <h3 class="text-blue-light font-montserrat dark:text-just-white text-clamp-md font-bold uppercase my-4 max-lg:text-center">
     Conoce Nuestra Newsletter por dentro
@@ -170,17 +174,18 @@
 </article>
   </div>
 </section>
-  </main>
-  
-  <footer class="bg-blue-light dark:bg-blue-dark text-white text-center py-4">
-  
-    © 2023 - La Fabrica Digital <br>
-    Todos los derechos reservados.
-  
+	</main>
+
+	
+	<footer class="bg-blue-light dark:bg-blue-dark text-white text-center py-4">
+	
+		© 2023 - La Fabrica Digital <br>
+		Todos los derechos reservados.
+	
 </footer>
-  <script type="module" src="/scripts/darkmode.js"></script>
+	<script type="module" src="/scripts/darkmode.js"></script>
 
 
-    
-  </body>
+		
+	</body>
 </html>
