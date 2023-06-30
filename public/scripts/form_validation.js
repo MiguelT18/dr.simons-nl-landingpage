@@ -40,8 +40,25 @@ $form.addEventListener("submit", (e) => {
 
 	// Verificar si no hay errores de validación
 	if (inputs.name.value !== "" && inputs.email.value !== "") {
-		// Redirigir al usuario a la página de agradecimiento
-		w.location.href = "/thanks";
+		// Enviar la solicitud al servidor de Flask
+		fetch("http://localhost:5000/api/contacts", {
+			method: "POST",
+			headers: {
+				"Content-Type": "application/json",
+			},
+			body: JSON.stringify({
+				email: inputs.email.value,
+				firstName: inputs.name.value,
+			}),
+		})
+			.then((response) => response.json())
+			.then((data) => {
+				console.log("Respuesta del servidor:", data);
+				w.location.href = "/thanks";
+			})
+			.catch((error) => {
+				console.error("Error al enviar la solicitud:", error);
+			});
 	}
 });
 

@@ -100,12 +100,12 @@ def add_contact():
         list_id = "9"
 
         # Agrega el contacto a la lista
-        add_contact_to_list(contact_id, list_id)
+        response_data = add_contact_to_list(contact_id, list_id)
         
         # Devuelve la respuesta de la API de ActiveCampaign
-        return response.content
+        return response_data, 200
     except requests.exceptions.Timeout:
         return "La solicitud a la API de ActiveCampaign ha agotado el tiempo de espera", 408
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
+    app.run(debug=False, port=5000)
